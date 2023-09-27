@@ -25,7 +25,9 @@ function HolderService() {
             <div style={{ 'display': 'flex', 'align-items': 'center' }}>
                 <div className='titleList'> Issuer: {issuer.name}</div>
                 <AsynButton
-                    onClick={async () => { await addClaimRequest(holderId, issuer.issuerId, slotValues[i]); }}> Request Claim </AsynButton>
+                    onClick={async () => { await addClaimRequest(holderId, issuer.issuerId, slotValues[i]); }}
+                    msg={"Successfully sent KYC data"}
+                    > Request Claim </AsynButton>
             </div>
 
             <div style={{

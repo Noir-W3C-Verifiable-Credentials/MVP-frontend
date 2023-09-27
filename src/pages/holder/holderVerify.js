@@ -45,7 +45,9 @@ function HolderVerify() {
                 <div className='titleList'> Query: {(query.queryName)}</div>
                 <div style={{ display: 'flex', 'margin-left': 'auto' }}>
                     {claimIds[i] != "" && <AsynButton
-                        onClick={async () => { await generateQueryProof(holderId, claimIds[i], query.queryId); }}> Generate Proof </AsynButton>}
+                        onClick={async () => { await generateQueryProof(holderId, claimIds[i], query.queryId); }}
+                        msg={"Successfully generated the ZK proof"}
+                        > Generate Proof </AsynButton>}
                     <select onChange={(e) => { claimIds[i] = e.target.value; console.log(claimIds[i]); setClaimIds(claimIds.map(e => e)) }} style={{ borderRadius: '5px', width: '120px', marginLeft: '10px' }}>
                         <option value="" disabled selected hidden>Select Claim</option>
                         {claims.filter(claim => deepEqual(claim.schema, query.schema) && claim.status == 'issued').map(claim =>

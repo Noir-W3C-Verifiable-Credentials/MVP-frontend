@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-function AsynButton({ onClick, children }) {
+function AsynButton({ onClick, msg, children }) {
     var [loading, setLoading] = useState(false);
 
     return <div className="backButton" style={{ 'margin-left': '10px' }}
@@ -10,7 +10,7 @@ function AsynButton({ onClick, children }) {
                 setLoading(true);
                 var status = await onClick();
                 setLoading(false);
-                if (typeof status != 'string') window.alert("success")
+                if (typeof status != 'string') window.alert(msg)
                 else window.alert(status)
             }
         }}>

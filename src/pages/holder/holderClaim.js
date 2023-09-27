@@ -24,7 +24,7 @@ function HolderClaim() {
         main()
     }, [cnt])
 
-    return <div>
+    return claims.length > 0 ? <div>
         {claims.map((claim, i) => <div className={`list pending`}>
             <div style={{ 'display': 'flex', 'align-items': 'center' }}>
                 <div className='titleList'> Claim: {truncateString(claim.claimId, 20)}</div>
@@ -49,7 +49,7 @@ function HolderClaim() {
             </div>
         </div>)}
 
-    </div>
+    </div> : <p>Currently you hold no claim, go to the request page to create some.</p>
 
 
 }

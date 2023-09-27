@@ -23,6 +23,7 @@ function IssuerOperationQueue() {
         <div style={{ 'display': 'flex', 'align-items': 'center' }}>
             <div className='titleList'> Operation Queue</div>
             <AsynButton
+                msg={"Successfully updated the on-chain data"}
                 onClick={async () => { await stateTransition(issuerId); setCnt(cnt + 1) }}> Update to the blockchain </AsynButton>
         </div>
 
